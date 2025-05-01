@@ -20,11 +20,5 @@ class HelloController extends AbstractController
             'controller_name' => 'HelloController',
         ]);
     }
-
-    #[Route('/messages/{id<\d+>}', name: 'app_show_one_message')]
-    public function showOne(int $id): Response
-    {
-        return $this->json($this->messages[$id]);
-    }
     
 }
