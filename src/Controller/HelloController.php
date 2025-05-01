@@ -6,9 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/hello')]
+#[Route('/')]
 class HelloController extends AbstractController
 {
+
+    private array $messages = ['Hello', 'Hi', 'Hey'];
+
+
     #[Route('/', name: 'app_index')]
     public function index(): Response
     {
@@ -17,6 +21,10 @@ class HelloController extends AbstractController
         ]);
     }
 
-    public fuibcrtiob
+    #[Route('/messages/{id<\d+>}', name: 'app_show_one_message')]
+    public function showOne(int $id): Response
+    {
+        return $this->json($this->messages[$id]);
+    }
     
 }
