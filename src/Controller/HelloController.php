@@ -10,7 +10,6 @@ use Symfony\Component\Routing\Attribute\Route;
 class HelloController extends AbstractController
 {
 
-    private array $messages = ['Hello', 'Hi', 'Hey'];
 
 
     #[Route('/', name: 'app_index')]
@@ -21,4 +20,5 @@ class HelloController extends AbstractController
         ]);
     }
     
+ 
 }

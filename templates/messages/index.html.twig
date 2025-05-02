@@ -11,10 +11,10 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>/Users/PIOTR/Desktop/Warsztat/Symfony_2/src/Controller/MessagesController.php</code></li>
-        <li>Your template at <code>/Users/PIOTR/Desktop/Warsztat/Symfony_2/templates/messages/index.html.twig</code></li>
-    </ul>
+   <ul>
+    {% for key, message in messages %}
+        <li><a href="{{ path('app_messages_show', {'id': key}) }}">{{ key }} - {{ message }}</a></li>
+    {% endfor %}
+   </ul>
 </div>
 {% endblock %}
